@@ -1,4 +1,6 @@
 import React from 'react';
+import { useChat } from '../../contexts/ChatContext'; // Import hook từ context
+
 
 const SkillsSection = ({
   activeTab,
@@ -6,8 +8,16 @@ const SkillsSection = ({
   isFollowing,
   setIsFollowing,
   setIsOrderModalOpen,
-  setIsChatOpen,
+  gamer,
 }) => {
+  const { addUser } = useChat();
+
+  const handleChatClick = () => {
+    if (gamer?.name && gamer?.avatar) {
+      addUser(gamer.name, gamer.avatar);
+    }
+  };
+
   return (
     <div className="w-full p-6 border-l border-gray-200">
       {/* Top Action Buttons */}
@@ -114,7 +124,7 @@ const SkillsSection = ({
             Đặt Đơn
           </button>
           <button
-            onClick={() => setIsChatOpen(true)}
+            onClick={handleChatClick}
             className="flex-1 bg-gradient-to-r from-pink-500 to-purple-600 text-white py-2 rounded-full font-medium hover:from-pink-600 hover:to-purple-700 flex items-center justify-center"
           >
             <i className="fas fa-comment-dots mr-2"></i> Chat

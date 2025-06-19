@@ -1,8 +1,20 @@
-import React from "react";
+// src/components/GameCategories.js
+import React, { useEffect, useState } from 'react';
+import { fetchGames } from '../api/gameService';
 
-function GameCategories({ games }) {
+const GameCategories = () => {
+  const [games, setGames] = useState([]);
+
+  useEffect(() => {
+    const load = async () => {
+      const data = await fetchGames();
+      setGames(data);
+    };
+    load();
+  }, []);
+
   return (
-    <section className="mb-12">
+      <section className="mb-12">
       <h2 className="text-2xl font-bold mb-6 flex items-center">
         <i className="fas fa-gamepad text-purple-400 mr-2"></i>
         Danh Mục Game
@@ -13,18 +25,16 @@ function GameCategories({ games }) {
             key={game.id}
             className="bg-gray-800 rounded-xl p-4 text-center hover:bg-gray-700 transition-all group cursor-pointer"
           >
-            <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-purple-500 to-blue-600 rounded-full flex items-center justify-center">
-              <i className="fas fa-gamepad text-2xl"></i>
+            <div className="bg-white shadow rounded-lg overflow-hidden">
+              <img src={game.imageUrl} alt={game.name} className="w-full h-48 object-cover" />
             </div>
             <h3 className="font-medium mb-1">{game.name}</h3>
-            <p className="text-sm text-gray-400 group-hover:text-purple-400 transition-colors">
-              {game.onlinePlayers.toLocaleString()} người chơi online
-            </p>
+            
           </div>
         ))}
       </div>
     </section>
   );
-}
+};
 
 export default GameCategories;

@@ -61,13 +61,16 @@ function HomePage() {
         />
         <SearchFilter/>
         <GameCategories games={games} />
-        <FeaturedGamers
-          gamers={featuredGamers}
-          games={games}
-          activeFilter={activeGameFilter}
-          setActiveFilter={setActiveGameFilter}
-          renderStars={renderStars}
-        />
+         <div className="px-6 py-10">
+     
+      <FeaturedGamers
+  games={games}
+  activeFilter={activeGameFilter}
+  setActiveFilter={setActiveGameFilter}
+  renderStars={renderStars}
+/>
+
+    </div>
         <HowItWorks />
         <Testimonials/>
         <CTASection/>

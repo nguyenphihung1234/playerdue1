@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "../components/Layout/Header";
 import HomePage from "../pages/HomePage";
@@ -7,29 +7,20 @@ import BookingSuccess from "../pages/BookingSuccess";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import Profile from "../components/Profiles/Profile";
+import { useUser } from "../contexts/UserContext"; // ✅ dùng hook
 
 function App() {
-  const [username, setUsername] = useState(localStorage.getItem("username") || "");
+  const { username, logout } = useUser(); // ✅ dùng context
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {/* Header luôn hiển thị */}
-      <Header
-        isLoggedIn={!!username}
-        username={username}
-        onLogout={() => {
-          localStorage.removeItem("username");
-          setUsername("");
-        }}
-      />
-
-      {/* Nội dung trang thay đổi theo Route */}
+        <Header isLoggedIn={!!username} username={username} onLogout={logout} />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
         <Route path="/booking/:gamerId" element={<BookingPage />} />
         <Route path="/booking/success" element={<BookingSuccess />} />
-        <Route path="/login" element={<LoginPage setUsername={setUsername} />} />
-        <Route path="/register" element={<RegisterPage />} />
         <Route path="/profile/:gamerId" element={<Profile />} />
       </Routes>
     </div>

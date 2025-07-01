@@ -96,7 +96,7 @@ function Profile() {
             </div>
             <div className="w-full md:w-3/5">
               <SkillsSection gamer={gamer} />
-              <PricingPackages gamer={gamer} />
+              
               <ReviewsSection reviews={reviews} />
             </div>
           </div>

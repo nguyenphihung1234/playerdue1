@@ -13,7 +13,7 @@ import GamerListPage from "../admin/GamerListPage";
 import UserListPage from "../admin/UserListPage";
 import GameListPage from "../admin/GameList";
 import Order from "../admin/Order";
-import Payment from "../admin/Payment";
+import Revenue from "../admin/revenue";
 
 function App() {
   const { username, logout } = useUser();
@@ -41,7 +41,7 @@ function App() {
         <Route path="/admin/users" element={<UserListPage />} />
         <Route path="/admin/games" element={<GameListPage />} />
         <Route path="/admin/orders" element={<Order />} />
-        <Route path="/admin/payments" element={<Payment />} />
+        <Route path="/admin/revenue" element={<Revenue />} />
       </Routes>
     </div>
   );

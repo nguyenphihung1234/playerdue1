@@ -124,10 +124,15 @@ const AdminLayout = ({ children }) => {
                   <i className="fas fa-receipt w-6 text-center"></i>
                   <span className="ml-3">Quản lý đơn hàng</span>
                 </Link>
-                <Link to="/admin/payments" className={`flex items-center px-3 py-3 text-sm font-medium rounded-lg ${isActive('/admin/payments') ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-700 dark:text-white' : darkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-100 text-gray-700'}`}> 
+                <Link to="/admin/revenue" className={`flex items-center px-3 py-3 text-sm font-medium rounded-lg ${isActive('/admin/revenue') ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-700 dark:text-white' : darkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-100 text-gray-700'}`}> 
                   <i className="fas fa-credit-card w-6 text-center"></i>
-                  <span className="ml-3">Quản lý thanh toán</span>
+                  <span className="ml-3">Quản lý doanh thu</span>
                 </Link>
+                <Link to="/admin/deposit" className={`flex items-center px-3 py-3 text-sm font-medium rounded-lg ${isActive('/admin/deposit') ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-700 dark:text-white' : darkMode ? 'hover:bg-gray-700 text-white' : 'hover:bg-gray-100 text-gray-700'}`}> 
+                  <i className="fas fa-wallet w-6 text-center"></i>
+                  <span className="ml-3">Quản lý nạp tiền,rút tiền</span>
+                </Link>
+                
               </div>
               {/* Thêm các mục sidebar khác tương tự ở đây */}
             </div>

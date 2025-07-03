@@ -477,4 +477,4 @@ const Payment = () => {
 };
 
 export default Payment;
-// Note: Ensure you have Font Awesome icons available in your project for the icons to render correctly.
+// Note: Ensure you have Font Awesome icons available in your project for the icons to render correctly. 

@@ -4,7 +4,7 @@ import axios from '../api/axiosConfig';
 import { Link } from "react-router-dom";
 import AdminLayout from "./AdminLayout";
 
-const AdminDashboard = () => { // Removed : React.FC
+const AdminDashboard = () => { 
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
   const [notifications, setNotifications] = useState(5);
@@ -15,7 +15,7 @@ const AdminDashboard = () => { // Removed : React.FC
   const [dateFilter, setDateFilter] = useState('7days');
   const [showExportModal, setShowExportModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [selectedUser, setSelectedUser] = useState(null); // Removed : number | null
+  const [selectedUser, setSelectedUser] = useState(null); 
   const [userCount, setUserCount] = useState(null);
   const [userGrowth, setUserGrowth] = useState(null);
   const [orderCount, setOrderCount] = useState(null);
@@ -32,9 +32,9 @@ const AdminDashboard = () => { // Removed : React.FC
   const [joinedTo, setJoinedTo] = useState('');
   const usersPerPage = 10;
 
-  // Khởi tạo biểu đồ
+ 
   useEffect(() => {
-    // Biểu đồ doanh thu
+    
     const revenueChart = echarts.init(document.getElementById('revenue-chart')); // Removed as HTMLDivElement
     const revenueOption = {
       animation: false,
@@ -44,7 +44,7 @@ const AdminDashboard = () => { // Removed : React.FC
       legend: {
         data: ['Doanh thu', 'Đơn thuê'],
         textStyle: {
-          color: darkMode ? '#ffffff' : '#333333' // Adjust legend text color based on dark mode
+          color: darkMode ? '#ffffff' : '#333333' 
         }
       },
       grid: {

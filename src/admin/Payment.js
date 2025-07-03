@@ -15,14 +15,7 @@ const Payment = () => {
 
   // Dữ liệu mẫu
   const orders = [
-    { id: 'DH001', customer: 'Nguyễn Văn A', gamer: 'Trần Thị B', date: '2025-07-02', total: 500000, adminFee: 50000, status: 'Hoàn thành' },
-    { id: 'DH002', customer: 'Lê Văn C', gamer: 'Phạm Thị D', date: '2025-07-01', total: 700000, adminFee: 70000, status: 'Đang xử lý' },
-    { id: 'DH003', customer: 'Hoàng Văn E', gamer: 'Vũ Thị F', date: '2025-06-30', total: 600000, adminFee: 60000, status: 'Hoàn thành' },
-    { id: 'DH004', customer: 'Đặng Văn G', gamer: 'Ngô Thị H', date: '2025-06-29', total: 800000, adminFee: 80000, status: 'Đã hủy' },
-    { id: 'DH005', customer: 'Bùi Văn I', gamer: 'Đinh Thị K', date: '2025-06-28', total: 450000, adminFee: 45000, status: 'Hoàn thành' },
-    { id: 'DH006', customer: 'Đỗ Văn L', gamer: 'Lý Thị M', date: '2025-06-27', total: 550000, adminFee: 55000, status: 'Hoàn thành' },
-    { id: 'DH007', customer: 'Hồ Văn N', gamer: 'Mai Thị P', date: '2025-06-26', total: 650000, adminFee: 65000, status: 'Đang xử lý' },
-    { id: 'DH008', customer: 'Phan Văn Q', gamer: 'Trịnh Thị R', date: '2025-06-25', total: 750000, adminFee: 75000, status: 'Hoàn thành' },
+   
   ];
 
   // Dữ liệu thống kê
